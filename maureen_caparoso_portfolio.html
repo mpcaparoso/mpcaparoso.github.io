@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maureen Caparoso | Virtual Assistant Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #a8336a;
+            --primary-dark: #7d2451;
+            --accent: #d4628f;
+            --accent-light: #e89bb9;
+            --text-dark: #2a2a2a;
+            --text-light: #5a5a5a;
+            --bg-cream: #fff5f8;
+            --bg-white: #ffffff;
+            --border-color: #f5d9e4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            letter-spacing: -0.02em;
+            font-weight: 900;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(212, 98, 143, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(232, 155, 185, 0.12) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .header .subtitle {
+            display: block;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        }
+
+        .header-tagline {
+            font-size: 1.35rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.6s forwards;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title .subtitle {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-alt {
+            background-color: var(--bg-white);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 1.25rem;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .about-highlights {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            padding: 2.5rem;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .about-highlights h3 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-item {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .highlight-item::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(168, 51, 106, 0.08);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent) 0%, var(--primary) 100%);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(168, 51, 106, 0.2);
+            border-color: var(--accent);
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+        }
+
+        .service-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .service-card li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Tools Section */
+        .tools-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .tool-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(168, 51, 106, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .tool-category:hover {
+            box-shadow: 0 8px 25px rgba(168, 51, 106, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .tool-category h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--accent);
+            font-weight: 900;
+        }
+
+        .tool-list {
+            list-style: none;
+        }
+
+        .tool-list li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Sample Works */
+        .samples-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .sample-work {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(168, 51, 106, 0.08);
+        }
+
+        .sample-work:hover {
+            box-shadow: 0 15px 50px rgba(168, 51, 106, 0.2);
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .sample-header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            padding: 1.75rem 2rem;
+            color: white;
+        }
+
+        .sample-header h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .sample-type {
+            font-size: 0.9rem;
+            color: var(--accent-light);
+            font-weight: 500;
+        }
+
+        .sample-body {
+            padding: 2rem;
+        }
+
+        .sample-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .sample-features h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .sample-features ul {
+            list-style: none;
+        }
+
+        .sample-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .sample-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .sample-tools {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .sample-tools strong {
+            color: var(--primary);
+        }
+
+        /* Process Timeline */
+        .process-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 2rem;
+            top: 4rem;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background: var(--border-color);
+        }
+
+        .process-number {
+            flex-shrink: 0;
+            width: 4rem;
+            height: 4rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: 900;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(168, 51, 106, 0.3);
+        }
+
+        .process-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .process-content p {
+            color: var(--text-light);
+        }
+
+        /* Strengths Grid */
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .strength-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent);
+            border-top: 2px solid var(--border-color);
+            border-right: 2px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(168, 51, 106, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .strength-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(168, 51, 106, 0.15);
+        }
+
+        .strength-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+
+        .strength-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section h2,
+        .contact-section .subtitle {
+            color: white;
+        }
+
+        .contact-section .subtitle {
+            opacity: 0.9;
+        }
+
+        .contact-intro {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.15rem;
+            opacity: 0.95;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item h4 {
+            color: var(--accent-light);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-item p {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-light);
+        }
+
+        .contact-details {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-details h4 {
+            color: var(--accent-light);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .detail-value {
+            font-weight: 500;
+        }
+
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2.25rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            .header {
+                padding: 3rem 1.5rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                gap: 1rem;
+            }
+
+            .process-number {
+                width: 3rem;
+                height: 3rem;
+                font-size: 1.25rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .detail-row {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .header-cta,
+            .btn {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            body {
+                background: white;
+            }
+
+            .service-card,
+            .tool-category,
+            .sample-work,
+            .strength-card {
+                border: 1px solid #ccc;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Maureen Caparoso</h1>
+            <span class="subtitle">Professional Virtual Assistant</span>
+            <p class="header-tagline">Supporting Your Business with Proven HR & Administrative Expertise</p>
+            <div class="header-cta">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#services" class="btn btn-secondary">View Services</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">About Me</span>
+                <h2>Experienced Professional Ready to Support Your Success</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a dedicated Virtual Assistant with four years of solid experience in human resources and administrative operations. My professional background includes managing timekeeping systems for multi-branch organizations, coordinating recruitment processes, maintaining employee records, and ensuring compliance with Philippine government regulations.</p>
+                    
+                    <p>From 2017 to 2021, I worked as a Human Resource Assistant at both Miniso Philippines and Beta Equipment Sales Corporation, where I handled critical administrative functions that kept operations running smoothly. I managed timekeeping for over 20 branches across the southern region, processed government-mandated benefits, coordinated training programs, and maintained confidential personnel records for hundreds of employees.</p>
+                    
+                    <p>Since 2021, I have been on a career break to focus on family responsibilities, particularly caring for my daughter. This period has strengthened my time management, multitasking abilities, and adaptability—skills that translate directly into effective virtual support.</p>
+                    
+                    <p>When you work with me, you get reliable support from someone who has already done this work successfully in demanding, fast-paced environments.</p>
+                </div>
+                <div class="about-highlights">
+                    <h3>Professional Highlights</h3>
+                    <div class="highlight-item">4 years of HR and administrative experience</div>
+                    <div class="highlight-item">Managed timekeeping for 20+ branches</div>
+                    <div class="highlight-item">Expert in Philippine government compliance (SSS, PhilHealth, PAG-IBIG, BIR, DOLE)</div>
+                    <div class="highlight-item">End-to-end recruitment and onboarding</div>
+                    <div class="highlight-item">Training coordination and employee support</div>
+                    <div class="highlight-item">Confidential records management</div>
+                    <div class="highlight-item">BS Psychology graduate, Universidad De Manila</div>
+                    <div class="highlight-item">Bilingual: English and Filipino</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section section-alt" id="services">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Services Offered</span>
+                <h2>How I Can Support Your Business</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Administrative Support</h3>
+                    <ul>
+                        <li>Email management and response handling</li>
+                        <li>Calendar scheduling and appointment coordination</li>
+                        <li>Data entry and database management</li>
+                        <li>File organization and digital filing systems</li>
+                        <li>Document preparation, formatting, and transmission</li>
+                        <li>Records management and maintenance</li>
+                        <li>Travel and logistics coordination</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>HR & Recruitment Assistance</h3>
+                    <ul>
+                        <li>Job posting creation and distribution</li>
+                        <li>Resume screening and candidate shortlisting</li>
+                        <li>Interview scheduling and coordination</li>
+                        <li>Onboarding support and new hire orientation</li>
+                        <li>Employee records maintenance (201 files)</li>
+                        <li>Timekeeping and attendance tracking</li>
+                        <li>Training coordination and documentation</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Operations & Compliance</h3>
+                    <ul>
+                        <li>Government compliance documentation (SSS, PhilHealth, PAG-IBIG, BIR)</li>
+                        <li>DOLE compliance reporting</li>
+                        <li>Government loan and benefit processing</li>
+                        <li>Process documentation and workflow organization</li>
+                        <li>Multi-branch coordination</li>
+                        <li>Regulatory submissions and deadline tracking</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Employee & Customer Support</h3>
+                    <ul>
+                        <li>Employee assistance with HR concerns</li>
+                        <li>Benefits and loan processing support</li>
+                        <li>Inquiry response management</li>
+                        <li>Document retrieval and record requests</li>
+                        <li>Liaison support between departments</li>
+                        <li>Communication with external agencies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Tools & Software</span>
+                <h2>Technical Proficiency</h2>
+            </div>
+            <div class="tools-container">
+                <div class="tool-category">
+                    <h3>Productivity & Communication</h3>
+                    <ul class="tool-list">
+                        <li>Google Workspace (Gmail, Docs, Sheets, Drive, Calendar)</li>
+                        <li>Microsoft Office Suite (Word, Excel, Outlook)</li>
+                        <li>Zoom and video conferencing platforms</li>
+                        <li>ChatGPT for content drafting and research</li>
+                    </ul>
+                </div>
+                <div class="tool-category">
+                    <h3>Organization & Project Management</h3>
+                    <ul class="tool-list">
+                        <li>Notion for task tracking</li>
+                        <li>Google Drive for file management</li>
+                        <li>Spreadsheet-based tracking systems</li>
+                        <li>Payroll coordination systems</li>
+                    </ul>
+                </div>
+                <div class="tool-category">
+                    <h3>Design & Content</h3>
+                    <ul class="tool-list">
+                        <li>Canva for basic graphic design</li>
+                        <li>Document formatting and presentation creation</li>
+                    </ul>
+                </div>
+                <div class="tool-category">
+                    <h3>Other Skills</h3>
+                    <ul class="tool-list">
+                        <li>Fast and accurate typing</li>
+                        <li>English and Filipino proficiency</li>
+                        <li>Strong internet research capabilities</li>
+                        <li>Quick adaptation to new software</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Works Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Sample Works</span>
+                <h2>Portfolio Examples</h2>
+                <p style="text-align: center; color: var(--text-light); max-width: 700px; margin: 1rem auto 0;">The following are practice projects created to demonstrate my skills and work quality. These reflect the type of professional work I delivered in my previous HR roles.</p>
+            </div>
+            <div class="samples-grid">
+                <div class="sample-work">
+                    <div class="sample-header">
+                        <h3>Multi-Branch Timekeeping Tracker</h3>
+                        <div class="sample-type">HR & Operations Support</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">A comprehensive spreadsheet designed to monitor attendance and timekeeping across multiple branches, ensuring accuracy and timely payroll processing.</p>
+                        <div class="sample-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Branch-wise employee attendance tracking</li>
+                                <li>Daily time record (DTR) submission status</li>
+                                <li>Discrepancy flagging and resolution notes</li>
+                                <li>Payroll cut-off alignment tracker</li>
+                                <li>Color-coded status indicators for quick monitoring</li>
+                                <li>Summary dashboard for management reporting</li>
+                            </ul>
+                        </div>
+                        <div class="sample-tools"><strong>Tools Used:</strong> Google Sheets</div>
+                    </div>
+                </div>
+
+                <div class="sample-work">
+                    <div class="sample-header">
+                        <h3>Government Compliance Tracking System</h3>
+                        <div class="sample-type">HR Compliance Documentation</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">An organized system for tracking employee government benefits, contributions, and loan applications to ensure timely processing and regulatory compliance.</p>
+                        <div class="sample-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Employee information and government ID numbers (SSS, PhilHealth, PAG-IBIG, TIN)</li>
+                                <li>Contribution payment status and schedules</li>
+                                <li>Loan application tracker with submission dates and status</li>
+                                <li>Document checklist for each application type</li>
+                                <li>Deadline reminders and follow-up notes</li>
+                                <li>Compliance report generation</li>
+                            </ul>
+                        </div>
+                        <div class="sample-tools"><strong>Tools Used:</strong> Google Sheets</div>
+                    </div>
+                </div>
+
+                <div class="sample-work">
+                    <div class="sample-header">
+                        <h3>New Hire Onboarding Checklist</h3>
+                        <div class="sample-type">HR Process Documentation</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">A step-by-step checklist to ensure smooth onboarding of new employees, covering documentation, orientation, and integration into company systems.</p>
+                        <div class="sample-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Pre-boarding document requirements</li>
+                                <li>Day 1 orientation schedule and topics</li>
+                                <li>Government benefit enrollment steps</li>
+                                <li>Timekeeping system orientation</li>
+                                <li>201 file completion tracker</li>
+                                <li>30-day and 90-day check-in reminders</li>
+                            </ul>
+                        </div>
+                        <div class="sample-tools"><strong>Tools Used:</strong> Google Sheets / Notion</div>
+                    </div>
+                </div>
+
+                <div class="sample-work">
+                    <div class="sample-header">
+                        <h3>Training Coordination Template</h3>
+                        <div class="sample-type">Training & Development Administration</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">A structured template for planning, organizing, and documenting employee training programs from needs assessment to post-training evaluation.</p>
+                        <div class="sample-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Training needs identification section</li>
+                                <li>Participant registration and attendance tracking</li>
+                                <li>Logistical arrangements checklist (venue, materials, facilitators)</li>
+                                <li>Training schedule and agenda</li>
+                                <li>Post-training evaluation forms</li>
+                                <li>Completion certificates tracker</li>
+                            </ul>
+                        </div>
+                        <div class="sample-tools"><strong>Tools Used:</strong> Google Docs / Google Sheets</div>
+                    </div>
+                </div>
+
+                <div class="sample-work">
+                    <div class="sample-header">
+                        <h3>Personnel File Organization System</h3>
+                        <div class="sample-type">Records Management</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">A standardized filing structure for maintaining complete, confidential, and easily retrievable employee records in compliance with DOLE requirements.</p>
+                        <div class="sample-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Document categories (employment contracts, performance reviews, leave records, disciplinary actions)</li>
+                                <li>File completeness checklist</li>
+                                <li>Confidentiality protocols</li>
+                                <li>Digital and physical file cross-reference system</li>
+                                <li>Record retention schedule</li>
+                                <li>Quick retrieval index</li>
+                            </ul>
+                        </div>
+                        <div class="sample-tools"><strong>Tools Used:</strong> Google Drive / Filing system documentation</div>
+                    </div>
+                </div>
+
+                <div class="sample-work">
+                    <div class="sample-header">
+                        <h3>Weekly Administrative Report</h3>
+                        <div class="sample-type">Executive Support</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">A concise weekly summary report highlighting completed tasks, ongoing projects, issues requiring attention, and upcoming priorities.</p>
+                        <div class="sample-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Week overview and key metrics</li>
+                                <li>Tasks completed with outcomes</li>
+                                <li>Ongoing projects and progress updates</li>
+                                <li>Issues or blockers flagged for management</li>
+                                <li>Upcoming deadlines and priorities</li>
+                                <li>Action items requiring approval or decision</li>
+                            </ul>
+                        </div>
+                        <div class="sample-tools"><strong>Tools Used:</strong> Google Docs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Process Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Work Process</span>
+                <h2>How I Deliver Results</h2>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <div class="process-content">
+                        <h3>Understanding Your Requirements</h3>
+                        <p>I take time to learn about your business operations, current processes, and specific tasks you need support with. I ask clarifying questions to ensure I understand your expectations and priorities.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <div class="process-content">
+                        <h3>Setting Up Systems</h3>
+                        <p>I establish organized workflows, tracking systems, and filing structures that align with your needs. Whether it's a timekeeping tracker, document filing system, or task management board, I ensure everything is set up for efficiency and easy access.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <div class="process-content">
+                        <h3>Consistent Execution</h3>
+                        <p>I follow established procedures carefully and complete tasks with attention to detail and accuracy. I maintain regular schedules for recurring responsibilities like data entry, record updates, and reporting.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <div class="process-content">
+                        <h3>Clear Communication</h3>
+                        <p>I provide regular updates on task progress and flag any issues or delays immediately. I maintain open communication channels and respond promptly to questions or new assignments.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">5</div>
+                    <div class="process-content">
+                        <h3>Quality Assurance</h3>
+                        <p>Before submitting work, I review for completeness, accuracy, and alignment with your instructions. I double-check data entries, verify documents, and ensure all deliverables meet professional standards.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">6</div>
+                    <div class="process-content">
+                        <h3>Continuous Improvement</h3>
+                        <p>I welcome feedback and actively look for ways to improve processes and efficiency. I stay open to learning new tools and adapting my approach based on your evolving needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strengths Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Strengths & Soft Skills</span>
+                <h2>What Sets Me Apart</h2>
+            </div>
+            <div class="strengths-grid">
+                <div class="strength-card">
+                    <h3>Attention to Detail</h3>
+                    <p>With four years of experience managing employee records, government compliance, and multi-branch timekeeping, I have developed a sharp eye for accuracy. I catch errors before they become problems.</p>
+                </div>
+                <div class="strength-card">
+                    <h3>Confidentiality & Discretion</h3>
+                    <p>I understand the sensitive nature of HR information and business data. I have handled confidential employee records, government documents, and internal communications with the highest level of professionalism and security.</p>
+                </div>
+                <div class="strength-card">
+                    <h3>Process-Oriented & Organized</h3>
+                    <p>I thrive on creating and following systematic processes. From managing 201 files to coordinating training programs, I ensure nothing falls through the cracks by maintaining organized workflows and checklists.</p>
+                </div>
+                <div class="strength-card">
+                    <h3>Reliable & Accountable</h3>
+                    <p>Throughout my HR career, I consistently met payroll deadlines, compliance submission dates, and reporting schedules. You can count on me to complete tasks on time without constant follow-up.</p>
+                </div>
+                <div class="strength-card">
+                    <h3>Adaptable</h3>
+                    <p>I have successfully managed responsibilities across different organizations, adjusted to varying systems and procedures, and handled multiple priorities simultaneously. I learn quickly and adapt my approach based on business needs.</p>
+                </div>
+                <div class="strength-card">
+                    <h3>Proactive Problem-Solver</h3>
+                    <p>I anticipate issues before they escalate. Whether it's catching timekeeping discrepancies, identifying missing documents, or following up on pending submissions, I take initiative to keep operations running smoothly.</p>
+                </div>
+                <div class="strength-card">
+                    <h3>Strong Communicator</h3>
+                    <p>I communicate clearly in both English and Filipino. I have experience liaising between employees, management, and government agencies, ensuring everyone has the information they need.</p>
+                </div>
+                <div class="strength-card">
+                    <h3>Multi-tasking Ability</h3>
+                    <p>My experience managing timekeeping for over 20 branches while handling recruitment, training coordination, and compliance tasks has strengthened my ability to juggle multiple responsibilities effectively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Let's Work Together</span>
+                <h2>Get In Touch</h2>
+            </div>
+            <p class="contact-intro">I am ready to bring my proven administrative and HR expertise into your business as a reliable Virtual Assistant. Whether you need help managing daily operations, organizing records, coordinating schedules, or handling compliance documentation, I can take these responsibilities off your plate so you can focus on strategic priorities.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p><a href="mailto:mpcaparoso@gmail.com">mpcaparoso@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Phone</h4>
+                    <p><a href="tel:+639204007420">0920-400-7420</a> (Smart)</p>
+                    <p><a href="tel:+639063274139">0906-327-4139</a> (Globe)</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Location</h4>
+                    <p>Pasig City, Philippines</p>
+                    <p>290 P. Bernal Street, Ugong</p>
+                </div>
+            </div>
+
+            <div class="contact-details">
+                <h4>Work Details</h4>
+                <div class="detail-row">
+                    <span class="detail-label">Availability</span>
+                    <span class="detail-value">Full-time or Part-time</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Time Zone</span>
+                    <span class="detail-value">Philippine Time (GMT+8)</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Work Setup</span>
+                    <span class="detail-value">Remote</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Education</span>
+                    <span class="detail-value">BS Psychology, Universidad De Manila</span>
+                </div>
+            </div>
+
+            <p class="footer-note">I look forward to discussing how I can support your business needs with the same dedication and professionalism I brought to my previous roles.</p>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.service-card, .sample-work, .strength-card, .process-step, .tool-category').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
